@@ -8,7 +8,6 @@ export { default as Experience } from './sections/Experience';
 export { default as Skills } from './sections/Skills';
 export { default as Projects } from './sections/Projects';
 export { default as Chatbot } from './sections/Chatbot';
-export { default as Contact } from './sections/Contact';
 export { CareerChatbot } from './sections/CareerChatbot';
 
 // UI Components

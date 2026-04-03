@@ -32,10 +32,6 @@ export const useKeyboardShortcuts = () => {
             e.preventDefault();
             scrollToSection('chatbot');
             break;
-          case 'c':
-            e.preventDefault();
-            scrollToSection('contact');
-            break;
           case 't':
             e.preventDefault();
             toggleTheme();
@@ -62,7 +58,7 @@ export const useKeyboardShortcuts = () => {
     const showKeyboardShortcuts = () => {
       toast.info('Keyboard shortcuts available', {
         title: 'Navigation Help',
-        message: 'Alt + H/P/E/S/A/C for sections, Alt + T for theme, Alt + ? for help',
+        message: 'Alt + H/P/E/S/A for sections, Alt + T for theme, Alt + ? for help',
         duration: 4000
       });
     };

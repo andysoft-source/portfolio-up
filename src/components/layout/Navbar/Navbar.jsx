@@ -9,7 +9,6 @@ const SECTION_LINKS = [
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {

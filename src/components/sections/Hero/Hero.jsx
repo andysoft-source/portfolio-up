@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { HERO_CONTENT, CONTACT } from "../../../constants/constants";
+import { HERO_CONTENT } from "../../../constants/constants";
 import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import {
     containerVariants,
     itemVariants,
@@ -127,7 +126,7 @@ export default function Hero() {
                             Core Expertise
                         </h3>
 
-                        <div className="space-y-3 mb-8">
+                        <div className="space-y-3">
                             {HERO_CONTENT.highlights.map((skill, index) => (
                                 <motion.div
                                     key={skill}
@@ -148,41 +147,6 @@ export default function Hero() {
                                     </span>
                                 </motion.div>
                             ))}
-                        </div>
-
-                        {/* Quick Contact Info */}
-                        <div className={`pt-6 border-t space-y-3 ${currentTheme === 'minimal' ? 'border-gray-200' : 'border-neutral-700'
-                            }`}>
-                            <div className="flex items-center gap-4">
-                                <motion.a
-                                    href={CONTACT.socials.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`p-2 rounded-lg transition-all duration-300 ${currentTheme === 'minimal'
-                                        ? 'text-gray-500 hover:text-blue-600 hover:bg-blue-50'
-                                        : 'text-neutral-400 hover:text-blue-400 hover:bg-blue-400/10'
-                                        }`}
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    <FaLinkedin className="text-xl" />
-                                </motion.a>
-
-                                <motion.a
-                                    href={CONTACT.socials.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`p-2 rounded-lg transition-all duration-300 ${currentTheme === 'minimal'
-                                        ? 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
-                                        : 'text-neutral-400 hover:text-white hover:bg-white/10'
-                                        }`}
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    <FaGithub className="text-xl" />
-                                </motion.a>
-
-                            </div>
                         </div>
                     </motion.div>
                 </motion.div>

@@ -14,7 +14,6 @@ const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
 const Chatbot = lazy(() => import("./components/sections/Chatbot"));
-const Contact = lazy(() => import("./components/sections/Contact"));
 const FloatingNavigation = lazy(() => import("./components/layout/FloatingNavigation"));
 
 function AppContent() {
@@ -104,12 +103,6 @@ function AppContent() {
           <ErrorBoundary sectionName="projects section">
             <section id="projects">
               <Projects />
-            </section>
-          </ErrorBoundary>
-
-          <ErrorBoundary sectionName="contact section">
-            <section id="contact">
-              <Contact />
             </section>
           </ErrorBoundary>
         </div>
