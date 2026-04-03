@@ -6,4 +6,4 @@ export const LIGHTHOUSE_SCORES = [
 ];
 
 export const LIGHTHOUSE_DATE = '2025-07-18';
-export const LIGHTHOUSE_REPORT_URL = 'https://pagespeed.web.dev/analysis/https-www-liuyuelin-dev/df2ampev8u?form_factor=desktop';
+export const LIGHTHOUSE_REPORT_URL = 'https://pagespeed.web.dev/';

@@ -32,6 +32,15 @@ const itemVariants = {
 export default function Contact() {
     const [activeTab, setActiveTab] = useState('info');
     const theme = useTheme();
+    const showAddress = Boolean(CONTACT.address?.trim());
+    const showPhone = Boolean(CONTACT.phoneNo?.trim());
+    const contactInfoColumns = [showAddress, showPhone, true].filter(Boolean).length;
+    const contactInfoGridClass =
+        contactInfoColumns === 3
+            ? 'md:grid-cols-3'
+            : contactInfoColumns === 2
+                ? 'md:grid-cols-2'
+                : 'md:grid-cols-1 max-w-md mx-auto';
 
     return (
         <section key={activeTab} className={`py-16 md:py-20 px-4 md:px-8 `}>
@@ -116,8 +125,8 @@ export default function Contact() {
                                                 : 'bg-neutral-900/50 border-neutral-800 shadow-purple-900/20'
                                             }
                                         `}>
-                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                                {/* Address */}
+                                            <div className={`grid grid-cols-1 gap-8 ${contactInfoGridClass}`}>
+                                                {showAddress && (
                                                 <motion.div
                                                     variants={itemVariants}
                                                     className="text-center md:text-left"
@@ -140,8 +149,9 @@ export default function Contact() {
                                                         {CONTACT.address}
                                                     </p>
                                                 </motion.div>
+                                                )}
 
-                                                {/* Phone */}
+                                                {showPhone && (
                                                 <motion.div
                                                     variants={itemVariants}
                                                     className="text-center md:text-left"
@@ -169,14 +179,15 @@ export default function Contact() {
                                                         {CONTACT.phoneNo}
                                                     </a>
                                                 </motion.div>
+                                                )}
 
                                                 {/* Email */}
                                                 <motion.div
                                                     variants={itemVariants}
-                                                    className="text-center md:text-left"
+                                                    className="text-center"
                                                 >
                                                     <div className={`
-                                                        w-12 h-12 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4
+                                                        w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4
                                                         ${theme.currentTheme === 'minimal'
                                                             ? 'bg-gray-100 text-gray-600'
                                                             : 'bg-neutral-800 text-purple-400'
@@ -190,7 +201,7 @@ export default function Contact() {
                                                     </h3>
                                                     <a
                                                         href={`mailto:${CONTACT.email}`}
-                                                        className={`text-sm hover:underline break-all ${theme.currentTheme === 'minimal'
+                                                        className={`inline-block text-sm hover:underline break-all text-center ${theme.currentTheme === 'minimal'
                                                             ? 'text-gray-600 hover:text-gray-900'
                                                             : 'text-neutral-300 hover:text-white'
                                                             }`}

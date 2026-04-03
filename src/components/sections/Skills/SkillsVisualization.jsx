@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../../contexts/ThemeContext';
-import LighthouseScoreCard from './LighthouseScoreCard';
 import { SKILLS_DATA, QUICK_STATS } from '../../../constants/skills';
 import SectionHeading from '../../ui/common/SectionHeading';
 
@@ -168,7 +167,7 @@ const CategoryCard = ({ category, data, index, activeCategory, setActiveCategory
             ? 'bg-gray-100 text-gray-500'
             : 'bg-neutral-700 text-neutral-400'
             }`}>
-            +{data.skills.length - 3} more
+            more
           </span>
         )}
       </div>
@@ -246,27 +245,11 @@ export default function SkillsVisualization() {
         ))}
       </div>
 
-      {/* Performance Metrics */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.6 }}
-        className="mt-16 mb-8"
-      >
-        <h3 className={`text-2xl font-bold text-center mb-8 ${theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-          }`}>
-          Performance Metrics
-        </h3>
-        <div className="flex justify-center">
-          <LighthouseScoreCard />
-        </div>
-      </motion.div>
-
       {/* Quick Stats */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
         className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
       >
         {QUICK_STATS.map((stat, index) => (

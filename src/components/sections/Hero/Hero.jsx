@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
-import { HERO_CONTENT } from "../../../constants/constants";
+import { HERO_CONTENT, CONTACT } from "../../../constants/constants";
 import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { HiDownload, HiMail } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { useCV } from '../../../hooks/useCV';
-import Button from '../../ui/common/Button';
 import {
     containerVariants,
     itemVariants,
@@ -17,7 +14,6 @@ import {
 
 export default function Hero() {
     const { currentTheme } = useTheme();
-    const { cvUrl, isLoading } = useCV();
     const typedRole = useTypingAnimation(HERO_CONTENT.roles, 150, 100, 2000);
 
     // Check for reduced motion preference
@@ -115,35 +111,6 @@ export default function Hero() {
                         >
                             {HERO_CONTENT.summary}
                         </motion.p>
-
-                        {/* Action Buttons */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-wrap gap-4"
-                        >
-                            <Button
-                                as="a"
-                                href={cvUrl}
-                                variant="primary"
-                                size="lg"
-                                loading={isLoading}
-                                className="group"
-                            >
-                                <HiDownload className="text-xl transition-transform group-hover:scale-110" />
-                                <span>Download CV</span>
-                            </Button>
-
-                            <Button
-                                as="a"
-                                href="#contact"
-                                variant="secondary"
-                                size="lg"
-                                className="group"
-                            >
-                                <HiMail className="text-xl transition-transform group-hover:scale-110" />
-                                <span>Get In Touch</span>
-                            </Button>
-                        </motion.div>
                     </div>
 
                     {/* Skills & Info Card - Right Side */}
@@ -188,7 +155,7 @@ export default function Hero() {
                             }`}>
                             <div className="flex items-center gap-4">
                                 <motion.a
-                                    href="https://linkedin.com/in/liuyuelintop"
+                                    href={CONTACT.socials.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`p-2 rounded-lg transition-all duration-300 ${currentTheme === 'minimal'
@@ -202,7 +169,7 @@ export default function Hero() {
                                 </motion.a>
 
                                 <motion.a
-                                    href="https://github.com/liuyuelintop"
+                                    href={CONTACT.socials.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`p-2 rounded-lg transition-all duration-300 ${currentTheme === 'minimal'
@@ -214,21 +181,6 @@ export default function Hero() {
                                 >
                                     <FaGithub className="text-xl" />
                                 </motion.a>
-
-                                <motion.a
-                                    href="https://blog.liuyuelin.dev/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`p-2 rounded-lg transition-all duration-300 ${currentTheme === 'minimal'
-                                        ? 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
-                                        : 'text-neutral-400 hover:text-white hover:bg-white/10'
-                                        }`}
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    <FaBlog className="text-xl" />
-                                </motion.a>
-
 
                             </div>
                         </div>

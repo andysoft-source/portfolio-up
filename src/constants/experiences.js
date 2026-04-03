@@ -45,7 +45,7 @@ export const EXPERIENCES = [
     },
   },
   {
-    period: "Sep 2019 – Feb 2021",
+    period: "Mar 2018 – Feb 2021",
     role: "Web Developer",
     company: {
       name: "Shanghai Anling Computer Technology Co., Ltd",

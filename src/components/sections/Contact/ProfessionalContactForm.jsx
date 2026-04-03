@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../../contexts/ThemeContext';
+import { CONTACT } from '../../../constants/constants';
 
 // Form configuration
 const CONTACT_TYPES = [
@@ -185,7 +186,7 @@ Message:
 ${formData.message}
       `.trim();
       
-      const mailtoLink = `mailto:liuyuelin.dev@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailtoBody)}`;
+      const mailtoLink = `mailto:${CONTACT.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailtoBody)}`;
       
       // Open mailto as fallback
       window.open(mailtoLink);

@@ -13,7 +13,6 @@ const Hero = lazy(() => import("./components/sections/Hero/Hero"));
 const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
-const GitHubActivity = lazy(() => import("./components/sections/GitHubActivity"));
 const Chatbot = lazy(() => import("./components/sections/Chatbot"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 const FloatingNavigation = lazy(() => import("./components/layout/FloatingNavigation"));
@@ -105,12 +104,6 @@ function AppContent() {
           <ErrorBoundary sectionName="projects section">
             <section id="projects">
               <Projects />
-            </section>
-          </ErrorBoundary>
-
-          <ErrorBoundary sectionName="GitHub activity section">
-            <section id="github">
-              <GitHubActivity />
             </section>
           </ErrorBoundary>
 

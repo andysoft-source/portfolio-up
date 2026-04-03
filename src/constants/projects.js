@@ -1,297 +1,239 @@
 import { projectImages } from "./assets";
 
 export const PROJECTS = [
-    {
-      title: "Career Chatbot",
-      image: projectImages.careerChatbot,
-      description: {
-        summary: "A personal AI assistant chatbot to act as a digital representative of Yuelin Liu.",
-        features: [
-          "Acts as a digital representative of Yuelin Liu",
-          "Initialized with Yuelin's professional information from a summary.txt file and a linkedin.pdf",
-          "Interactive and helpful to visitors on a website",
-          "Can answer questions about Yuelin's career, skills, and background",
-          "Records questions it cannot answer",
-          "Records contact details if a user wishes to get in touch",
-          "Uses a Gemini model with a toolset for recording functions"
-        ]
-      },
-      url: "https://huggingface.co/spaces/liuyuelintop/career_chatbots",
-      technologies: {
-        main: ["OpenAI","Agents","Gradio", "Python"],
-        others: ["Gemini"]
-      }
-    },
-    {
-    title: "Melbourne University Ultimate Frisbee Club",
-    image: projectImages.melbUniUltimate, // Add the relevant image to your assets
+  {
+    title: "CONCONTOWN",
+    image: projectImages.completeConcontownCover,
     description: {
       summary:
-        "A modern, open-source web platform for ultimate frisbee clubs. Built for the Melbourne University Ultimate community—ready for your team!",
+        "SM Entertainment's official music-travel platform: one app for concert tickets, hotels, transport, merch, and fan experiences for K-pop fans in Korea and Japan. Test launch May 2025; official opening July 3, 2025.",
       features: [
-        "Beautiful, modern UI with Tailwind, shadcn/ui, and Lucide icons",
-        "All-in-one club management: events, announcements, roster, alumni, tournaments, and more",
-        "Admin dashboard for easy content and user management",
-        "Open source, MIT licensed – ready for your club or team",
-        "Easy deploy to Vercel (or your own server)",
-        "Role-based access with NextAuth.js (admin/member/public)",
-        "Trusted by the Melbourne University Ultimate community"
-      ]
-    },
-    url: "https://melb-uni-ultimate.vercel.app",
-    technologies: {
-      main: [
-        "Next.js 15",
-        "TypeScript",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "MongoDB",
-      ],
-      others: [
-        "Lucide React",
-        "Jest",
-        "ESLint",
-        "Prettier",
-        "Husky",
-        "Vercel"
-      ]
-    }
-    },
-  {
-    title: "Netflix Clone",
-    image: projectImages.mernNetflixClone,
-    description: {
-      summary: "Feature-rich video streaming platform clone.",
-      features: [
-        "JWT authentication system",
-        "Dynamic content recommendation engine",
-        "Advanced search with actor/film filters",
-        "Responsive cross-device UI",
+        "Single checkout for tickets, hotels, and transportation",
+        "Exclusive fan packages (e.g. Tokyo Dome Hotel x SMTOWN LIVE 2025, in-app only)",
+        "Official goods pre-order to skip venue lines",
+        "Points, promos, and launch giveaways including hotel stays",
+        "Japanese and Korean UI for both markets",
       ],
     },
-    url: "https://netwatch.liuyuelin.xyz/",
+    url: "https://www.concontown.jp/",
     technologies: {
-      main: ["MERN", "Zustand", "AWS"],
-      others: [],
+      main: ["Mobile App", "Travel & E-commerce", "Event Management", "i18n"],
+      others: ["Entertainment", "Lifestyle", "Tourism"],
     },
   },
   {
-    title: "SaaS IDE Platform",
+    title: "Cuping",
+    image: projectImages.completeCupingCover,
+    description: {
+      summary:
+        "Interest-first social app for ONE TEAM SOFT (Tokyo): \"GrouPINs\" connect people by shared hobbies and places—not swipe-only dating.",
+      features: [
+        "GrouPINs built around interests, locations, and activities",
+        "ID verification plus admin review for new members",
+        "Automated limits for reported users; inactive users deprioritized in feeds",
+        "Members and pro hosts can both create GrouPINs",
+        "Location + interest discovery for relevant groups nearby",
+        "Privacy-first: minimal retention and clear delete rights",
+      ],
+    },
+    url: "https://cuping.me/",
+    technologies: {
+      main: ["Mobile App", "Social", "Community", "Events"],
+      others: ["Trust & Safety", "Lifestyle", "Tokyo"],
+    },
+  },
+  {
+    title: "Moonoh",
+    image: projectImages.completeMoonohCover,
+    description: {
+      summary:
+        "Neighborhood resale marketplace (Moonoh Inc., NYC, 2024): zero seller fees and tooling that favors trust between neighbors, not only transactions.",
+      features: [
+        "No platform cut—sellers keep full sale price",
+        "Very fast listing flow for casual sellers",
+        "In-app chat until you agree on a safe meetup",
+        "Ratings after deals to build local reputation",
+        "Safety tips and fraud guidance in the core journey",
+        "Hyperlocal browse so handoffs stay practical",
+      ],
+    },
+    url: "https://www.moon-oh.com/",
+    technologies: {
+      main: ["Mobile App", "Marketplace", "E-commerce", "Community"],
+      others: ["Local Commerce", "Trust & Safety"],
+    },
+  },
+  {
+    title: "Autowini Pro",
+    image: projectImages.completeAutowiniCover,
+    description: {
+      summary:
+        "Seller app for Autowini Inc., South Korea's used-car export hub—dealers manage inventory and cross-border deals from the lot or auction lane.",
+      features: [
+        "Capture photos/videos to the cloud—no phone storage or YouTube upload steps",
+        "14 languages so sellers can talk to buyers worldwide",
+        "100% advance payment protection before vehicles ship",
+        "Listing flow under ~5 minutes vs 15+ on legacy flows",
+        "Shipped at 4.5+ stars; primary workflow for 500+ active sellers",
+      ],
+    },
+    url: "https://www.autowini.com/",
+    technologies: {
+      main: ["Mobile App", "Cloud Media", "i18n", "FinTech"],
+      others: ["B2B", "Automotive Export", "Seller Tools"],
+    },
+  },
+  {
+    title: "Nexus AI",
+    image: projectImages.careerChatbot,
+    description: {
+      summary:
+        "Embedded AI concierge for your portfolio—answers career and project questions, captures leads, and routes unknown topics for follow-up.",
+      features: [
+        "Digital representative tuned to JinHo Yun's experience and stack",
+        "Profile-grounded answers from structured context (no generic filler)",
+        "Visitor Q&A with logging for gaps you want to train later",
+        "Optional contact capture when visitors want a direct reply",
+        "Gemini-powered tool calls for structured note-taking",
+      ],
+    },
+    url: "https://huggingface.co/spaces/liuyuelintop/career_chatbots",
+    technologies: {
+      main: ["Python", "Gradio", "Gemini API", "Agents"],
+      others: ["Hugging Face Spaces", "Tool Use"],
+    },
+  },
+  {
+    title: "CodeCraft Cloud",
     image: projectImages.nextCodeCraft,
     description: {
       summary:
-        "Next.js IDE inspired by VS Code with real-time collaboration tools.",
+        "Browser-based IDE workspace with multiplayer editing, snippets, and SaaS billing hooks—VS Code–inspired UX on the web.",
       features: [
-        "Real-time code editing with multiplayer support",
-        "Secure payment gateway integration",
-        "Code snippet sharing system",
-        "VS Code-like interface customization",
+        "Shared cursors and live document sync for pair sessions",
+        "Snippet gallery with shareable permalinks",
+        "Payments and webhooks wired for SaaS checkout flows",
+        "Themable editor chrome and keyboard-first navigation",
       ],
     },
     url: "https://codecraft.liuyuelin.dev/",
     technologies: {
-      main: ["Next.js", "Convex", "Webhooks", "Clerk"],
-      others: ["Lemon Squeezy", "SaaS"],
+      main: ["Next.js", "Convex", "Clerk", "TypeScript"],
+      others: ["Webhooks", "Lemon Squeezy", "Real-time sync"],
     },
   },
   {
-    title: "Remote Interview Platform",
-    image: projectImages.nextRemoteInterviewPlatform,
+    title: "InkStack",
+    image: projectImages.mernBlog,
     description: {
       summary:
-        "Integrated technical interview solution with coding environment.",
+        "Markdown-first developer publication engine—fast builds, rich MDX, and SEO that survives social sharing.",
       features: [
-        "Real-time video/audio with screen recording",
-        "Live code collaboration with OT algorithms",
-        "Preloaded coding challenges library",
-        "Candidate performance analytics dashboard",
-      ],
-    },
-    url: "https://codeinterview.liuyuelin.dev/",
-    technologies: {
-      main: ["Next.js", "Stream", "Convex", "Shadcn/ui"],
-      others: ["WebRockets API", "Clerk"],
-    },
-  },
-    {
-    title: "ApeUni FIB Extractor Monorepo",
-    image: projectImages.apeUniFibExtractor,  // make sure you add this asset to your `projectImages`
-    description: {
-      summary:
-        "Unified toolkit for extracting, copying, and exporting “Fill in the Blank” answers from ApeUni practice pages.",
-      features: [
-        "Accurate extraction for both Reading and Writing FIB questions",
-        "SPA navigation support with per-question caching",
-        "Modern floating UI for instant copy, preview, and export",
-        "Dual output: Tampermonkey userscript & Chrome extension"
-      ]
-    },
-    url: "https://github.com/liuyuelintop/apeuni-fib-extractor-monorepo",  // replace with your actual repo URL
-    technologies: {
-      main: ["JavaScript", "Userscript", "Chrome Extension", "Monorepo"],
-      others: ["TypeScript", "ESBuild", "npm"]
-    }
-  },
-  {
-    title: "Next Markdown Blog",
-    image: projectImages.nextBlog,
-    description: {
-      summary: "Modern static site generator for technical content.",
-      features: [
-        "MDX components support",
-        "Dynamic Open Graph generation",
-        "Syntax highlighting with Prism",
-        "Automated content pagination",
+        "MDX with interactive components where you need them",
+        "Automatic Open Graph and Twitter cards per route",
+        "Prism-powered code samples with theme parity",
+        "Paginated archives and tag-driven discovery",
       ],
     },
     url: "https://blog.liuyuelin.dev/",
     technologies: {
-      main: ["Next.js", "Shadcn/ui", "Velite", "SEO"],
-      others: ["Tailwind CSS", "Vercel"],
+      main: ["Next.js", "Velite", "MDX", "Tailwind CSS"],
+      others: ["Shadcn/ui", "Vercel", "SEO"],
     },
   },
   {
-    title: "Twitter Clone",
+    title: "PulseWire",
     image: projectImages.twitterClone,
     description: {
-      summary: "Full-stack social media platform replica.",
+      summary:
+        "Microblogging surface with realtime posts, threads, and media—designed for low-latency reads and writes at small scale.",
       features: [
-        "Real-time post creation/deletion",
-        "Interactive comment threads",
-        "Cloudinary image management",
-        "Push notification system",
+        "Create, edit, and remove posts with optimistic UI paths",
+        "Nested replies and lightweight notifications",
+        "Image pipeline via Cloudinary transforms",
+        "JWT-secured API with role-aware mutations",
       ],
     },
     url: "https://twitter-clone-qhpp.onrender.com/",
     technologies: {
-      main: ["MERN", "React Query", "Cloudinary", "JWT"],
-      others: ["DaisyUI"],
+      main: ["React", "Node.js", "MongoDB", "React Query"],
+      others: ["Cloudinary", "JWT", "Express", "Tailwind"],
     },
   },
   {
-    title: "MERN E-commerce",
-    image: projectImages.mernEcommerce,
+    title: "CartForge",
+    image: projectImages.cartForgeCover,
     description: {
-      summary: "Complete online retail solution.",
+      summary:
+        "Full retail stack with checkout, inventory variants, and ops dashboards—Redis-backed reads for snappy catalog pages.",
       features: [
-        "Stripe payment integration",
-        "Redis caching system",
-        "Product variant management",
-        "Real-time sales analytics",
+        "Stripe Checkout and webhook-driven order state",
+        "Variant matrix (size, color, bundle) without spreadsheet hacks",
+        "Redis layer for hot product and cart fragments",
+        "Sales snapshots and funnel-friendly analytics widgets",
       ],
     },
     url: "https://mern-e-commerce-store-8w0a.onrender.com/",
     technologies: {
-      main: ["MERN", "Stripe", "Redis", "Zustand"],
-      others: ["Cloudinary", "Tailwind"],
+      main: ["React", "Node.js", "MongoDB", "Stripe"],
+      others: ["Redis", "Zustand", "Cloudinary"],
     },
   },
   {
-    title: "Stripe Subscriptions",
-    image: projectImages.nextStripeStarter,
+    title: "CycleBill",
+    image: projectImages.cycleBillCover,
     description: {
-      summary: "Subscription management system with Stripe.",
+      summary:
+        "Subscription lifecycle console—plans, trials, dunning-friendly webhooks, and customer portal flows on Next.js.",
       features: [
-        "Recurring payment workflows",
-        "Dark/light theme system",
-        "Webhook event handling",
-        "Kinde authentication",
+        "Stripe Billing primitives for monthly and annual plans",
+        "Webhook idempotency and audit-friendly event log",
+        "Theme-aware customer area (light / dark)",
+        "Kinde-handled identities with minimal custom auth code",
       ],
     },
     url: "https://stripe-subscriptions-yl.vercel.app/",
     technologies: {
       main: ["Next.js", "Stripe", "Prisma", "Kinde"],
-      others: ["MongoDB", "Vercel"],
+      others: ["PostgreSQL", "Vercel", "Webhooks"],
     },
   },
   {
-    title: "Real-Time Chat",
-    image: projectImages.mernChat,
-    description: {
-      summary: "Instant messaging platform with presence detection.",
-      features: [
-        "Socket.io real-time engine",
-        "Online status indicators",
-        "Message history persistence",
-        "Error boundary handling",
-      ],
-    },
-    url: "https://mern-chat-app-9ybq.onrender.com/",
-    technologies: {
-      main: ["MERN", "Daisy UI", "Socket.io", "JWT"],
-      others: [],
-    },
-  },
-  {
-    title: "Real Estate Portal",
+    title: "NestMap",
     image: projectImages.mernEstate,
     description: {
-      summary: "Property listing marketplace.",
+      summary:
+        "Property discovery portal with map-aware search, rich galleries, and lead capture tuned for agents and renters.",
       features: [
-        "Advanced search filters",
-        "Geolocation tagging",
-        "Image gallery management",
-        "Lead generation system",
+        "Compound filters: price, beds, amenities, pet rules",
+        "Map and list dual mode with geotagged listings",
+        "Drag-and-drop media ordering for open houses",
+        "Lead forms routed to CRM-friendly payloads",
       ],
     },
     url: "https://mern-estate-zw5b.onrender.com/",
     technologies: {
-      main: ["MERN", "Firebase", "Tailwind"],
-      others: [],
+      main: ["React", "Node.js", "MongoDB", "Firebase"],
+      others: ["Map APIs", "Tailwind CSS", "Express"],
     },
   },
   {
-    title: "Game Hub",
+    title: "PlayAxis",
     image: projectImages.gameHub,
     description: {
-      summary: "Multi-genre browser gaming platform.",
+      summary:
+        "Arcade lobby for quick sessions—TypeScript game shell with saved progress and shareable score cards.",
       features: [
-        "Cross-browser compatibility",
-        "Game progress saving",
-        "Social sharing integration",
-        "Responsive controls",
+        "Touch and keyboard controls with responsive canvas layouts",
+        "Local progress checkpoints between sessions",
+        "Social share hooks for highlights",
+        "Vercel-friendly static + edge delivery",
       ],
     },
     url: "https://game-hub-two-zeta.vercel.app/",
     technologies: {
-      main: ["React", "TypeScript", "CSS", "Vercel"],
-      others: [],
-    },
-  },
-  {
-    title: "Blog Platform",
-    image: projectImages.mernBlog,
-    description: {
-      summary: "Content management system for publishers.",
-      features: [
-        "Rich text editor with embeds",
-        "Role-based access control",
-        "SEO-friendly markup",
-        "Comment moderation tools",
-      ],
-    },
-    url: "https://mern-blog-6atr.onrender.com/",
-    technologies: {
-      main: ["MERN", "Firebase", "Tailwind", "Flowbite"],
-      others: [],
-    },
-  },
-  {
-    title: "Biomech Analysis",
-    image: projectImages.biomechAnalysis,
-    description: {
-      summary: "Motion capture data processing pipeline.",
-      features: [
-        "YOLOv8 pose estimation",
-        "OpenSim model conversion",
-        "Real-time visualization",
-        "Multi-database storage",
-      ],
-    },
-    url: "#",
-    technologies: {
-      main: ["React", "YOLOv8", "OpenSim", "SQL"],
-      others: ["NoSQL", "Python"],
+      main: ["React", "TypeScript", "Vite", "Vercel"],
+      others: ["Canvas API", "PWA-ready"],
     },
   },
 ];

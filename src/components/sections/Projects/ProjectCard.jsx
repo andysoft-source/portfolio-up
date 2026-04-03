@@ -160,7 +160,7 @@ const ProjectCard = ({ project, onReadMore }) => {
                                         className={`px-2 py-1 rounded text-xs border transition-colors ${styles.techButton} ${getThemeFocusRing(currentTheme)}`}
                                         aria-label="View all technologies"
                                     >
-                                        +{project.technologies.main.length - 3} more
+                                        more
                                     </button>
                                 )}
                             </div>
