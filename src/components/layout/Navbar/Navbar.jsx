@@ -9,9 +9,6 @@ const SECTION_LINKS = [
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'References', href: '#references' },
-    { label: 'Brand', href: '#brand' },
     { label: 'GitHub', href: '#github' },
     { label: 'Contact', href: '#contact' },
 ];
@@ -83,7 +80,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            Yuelin&apos;s Portfolio
+                            JinHo Yun&apos;s Portfolio
                         </motion.span>
                     </div>
 

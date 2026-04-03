@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { HERO_CONTENT } from "../../../constants/constants";
 import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { HiDownload, HiMail, HiLocationMarker } from 'react-icons/hi';
-import { FaLinkedin, FaGithub, FaBlog } from 'react-icons/fa';
+import { HiDownload, HiMail } from 'react-icons/hi';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useCV } from '../../../hooks/useCV';
 import Button from '../../ui/common/Button';
 import {
@@ -186,12 +186,6 @@ export default function Hero() {
                         {/* Quick Contact Info */}
                         <div className={`pt-6 border-t space-y-3 ${currentTheme === 'minimal' ? 'border-gray-200' : 'border-neutral-700'
                             }`}>
-                            <div className={`flex items-center gap-3 text-sm ${currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
-                                }`}>
-                                <HiLocationMarker className="text-lg" />
-                                <span>Melbourne, Australia</span>
-                            </div>
-
                             <div className="flex items-center gap-4">
                                 <motion.a
                                     href="https://linkedin.com/in/liuyuelintop"

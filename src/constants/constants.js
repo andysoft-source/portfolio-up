@@ -1,29 +1,27 @@
 export const HERO_CONTENT = {
-  name: "Yuelin Liu",
+  name: "JinHo Yun",
   roles: [
-    "Full Stack Developer",
-    "AI Engineer",
-    "React Specialist",
-    "Product Builder"
+    "AI-Driven Full-Stack Developer",
+    "LLM & Agent Integration",
+    "React / Next.js Specialist",
+    "Cloud & DevOps Engineer"
   ],
-  summary: `Builder of robust SaaS products, clean code, and scalable APIs. At ByteCronix, I shipped real-world AI/PR features across microservices, infra, and UI. I thrive in ambiguity and deliver high-velocity results—frontend to backend, infra to UI polish.`,
+  summary: `AI-driven full-stack developer building fast, scalable, and production-ready applications. From frontend to backend and deployment, I deliver complete solutions with efficiency and precision.`,
   highlights: [
-  "Modern React/Next.js",
-  "Cloud & CI/CD Automation",
-  "AI Engineering (learning)",
-  "LangChain & RAG",
-  "LLM Product Integrations",
-  "Vector DB Search (Pinecone, Weaviate)",
-],
+    "AI Engineering — LLMs, RAG & Agentic Workflows",
+    "Next.js / React & Modern Frontend Architecture",
+    "Scalable APIs, Data & Backend Systems",
+    "Cloud-Native Deployments & CI/CD Pipelines",
+    "TypeScript, Testing & Production Observability",
+  ],
 };
 
 export const CONTACT = {
-  address: "464 Collins St, MEL, VIC 3000",
-  phoneNo: "+61 451 690 105",
-  email: "liuyuelintop@gmail.com",
+  address: "",
+  phoneNo: "",
+  email: "darkblueorbit17@outlook.com",
   socials: {
-    linkedin: "https://linkedin.com/in/liuyuelintop",
-    github: "https://github.com/liuyuelintop",
-    blog: "https://blog.liuyuelin.dev/",
+    linkedin: "https://www.linkedin.com/in/jinhoyun/",
+    github: "https://github.com/jinhoyun",
   },
 };
