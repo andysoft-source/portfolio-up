@@ -3,7 +3,7 @@ import { projectImages } from "./assets";
 export const PROJECTS = [
   {
     title: "CONCONTOWN",
-    image: projectImages.completeConcontownCover,
+    image: projectImages.concontownPng,
     description: {
       summary:
         "SM Entertainment's official music-travel platform: one app for concert tickets, hotels, transport, merch, and fan experiences for K-pop fans in Korea and Japan. Test launch May 2025; official opening July 3, 2025.",
@@ -17,13 +17,13 @@ export const PROJECTS = [
     },
     url: "https://www.concontown.jp/",
     technologies: {
-      main: ["Mobile App", "Travel & E-commerce", "Event Management", "i18n"],
-      others: ["Entertainment", "Lifestyle", "Tourism"],
+      main: ["Swift", "Kotlin", "Objective-C", "Java"],
+      others: ["JavaScript", "TypeScript", "Dart"],
     },
   },
   {
     title: "Cuping",
-    image: projectImages.completeCupingCover,
+    image: projectImages.cupingPng,
     description: {
       summary:
         "Interest-first social app for ONE TEAM SOFT (Tokyo): \"GrouPINs\" connect people by shared hobbies and places—not swipe-only dating.",
@@ -38,13 +38,13 @@ export const PROJECTS = [
     },
     url: "https://cuping.me/",
     technologies: {
-      main: ["Mobile App", "Social", "Community", "Events"],
-      others: ["Trust & Safety", "Lifestyle", "Tokyo"],
+      main: ["TypeScript", "Dart", "Kotlin", "JavaScript"],
+      others: ["Swift", "Java", "Objective-C"],
     },
   },
   {
     title: "Moonoh",
-    image: projectImages.completeMoonohCover,
+    image: projectImages.moonohPng,
     description: {
       summary:
         "Neighborhood resale marketplace (Moonoh Inc., NYC, 2024): zero seller fees and tooling that favors trust between neighbors, not only transactions.",
@@ -59,13 +59,13 @@ export const PROJECTS = [
     },
     url: "https://www.moon-oh.com/",
     technologies: {
-      main: ["Mobile App", "Marketplace", "E-commerce", "Community"],
-      others: ["Local Commerce", "Trust & Safety"],
+      main: ["Swift", "TypeScript", "Dart", "Kotlin"],
+      others: ["Java", "Objective-C", "JavaScript"],
     },
   },
   {
     title: "Autowini Pro",
-    image: projectImages.completeAutowiniCover,
+    image: projectImages.autowiniEnPng,
     description: {
       summary:
         "Seller app for Autowini Inc., South Korea's used-car export hub—dealers manage inventory and cross-border deals from the lot or auction lane.",
@@ -79,8 +79,8 @@ export const PROJECTS = [
     },
     url: "https://www.autowini.com/",
     technologies: {
-      main: ["Mobile App", "Cloud Media", "i18n", "FinTech"],
-      others: ["B2B", "Automotive Export", "Seller Tools"],
+      main: ["Kotlin", "Java", "Swift", "TypeScript"],
+      others: ["Dart", "JavaScript", "Objective-C"],
     },
   },
   {
@@ -192,7 +192,7 @@ export const PROJECTS = [
         "Kinde-handled identities with minimal custom auth code",
       ],
     },
-    url: "https://stripe-subscriptions-yl.vercel.app/",
+    url: "",
     technologies: {
       main: ["Next.js", "Stripe", "Prisma", "Kinde"],
       others: ["PostgreSQL", "Vercel", "Webhooks"],
@@ -211,7 +211,7 @@ export const PROJECTS = [
         "Lead forms routed to CRM-friendly payloads",
       ],
     },
-    url: "https://mern-estate-zw5b.onrender.com/",
+    url: "",
     technologies: {
       main: ["React", "Node.js", "MongoDB", "Firebase"],
       others: ["Map APIs", "Tailwind CSS", "Express"],

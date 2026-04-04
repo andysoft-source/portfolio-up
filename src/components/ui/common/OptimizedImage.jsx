@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import Skeleton from './Skeleton';
 
@@ -15,6 +15,20 @@ const OptimizedImage = ({
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    setImageLoaded(false);
+    setImageError(false);
+  }, [src]);
+
+  // Cached / already-complete images often never fire onLoad; opacity would stay 0 forever.
+  useLayoutEffect(() => {
+    const el = imgRef.current;
+    if (el?.complete && el.naturalHeight > 0) {
+      setImageLoaded(true);
+    }
+  }, [src]);
 
   const handleLoad = (e) => {
     setImageLoaded(true);
@@ -48,18 +62,23 @@ const OptimizedImage = ({
 
       {/* Actual image */}
       {!imageError && (
-        <motion.img
-          src={src}
-          alt={alt}
-          loading={loading}
-          onLoad={handleLoad}
-          onError={handleError}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: imageLoaded ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 w-full h-full object-cover"
-          {...props}
-        />
+        >
+          <img
+            ref={imgRef}
+            src={src}
+            alt={alt}
+            loading={loading}
+            onLoad={handleLoad}
+            onError={handleError}
+            className="h-full w-full object-cover"
+            {...props}
+          />
+        </motion.div>
       )}
     </div>
   );

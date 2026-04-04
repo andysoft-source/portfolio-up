@@ -7,10 +7,10 @@ import careerChatbot from "../assets/projects/careerChatbot.webp";
 import twitterClone from "../assets/projects/twitter-clone.webp";
 import cartForgeCover from "../assets/projects/cart-forge-cover.webp";
 import cycleBillCover from "../assets/projects/cycle-bill-cover.webp";
-import completeConcontownCover from "../assets/projects/complete-concontown-cover.webp";
-import completeCupingCover from "../assets/projects/complete-cuping-cover.webp";
-import completeMoonohCover from "../assets/projects/complete-moonoh-cover.webp";
-import completeAutowiniCover from "../assets/projects/complete-autowini-cover.webp";
+import concontownPng from "../assets/projects/concontown.png";
+import cupingPng from "../assets/projects/Cuping.png";
+import moonohPng from "../assets/projects/Moonoh.png";
+import autowiniEnPng from "../assets/projects/Autowini-EN.png";
 // 其他资源 
 import logo from "../assets/Logo.png";
 
@@ -24,10 +24,10 @@ export const projectImages = {
   twitterClone,
   cartForgeCover,
   cycleBillCover,
-  completeConcontownCover,
-  completeCupingCover,
-  completeMoonohCover,
-  completeAutowiniCover,
+  concontownPng,
+  cupingPng,
+  moonohPng,
+  autowiniEnPng,
 };
 
 export const generalImages = {

@@ -1,5 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useTheme } from "../../../contexts/ThemeContext";
 import OptimizedImage from "../../ui/common/OptimizedImage";
@@ -29,36 +28,13 @@ const hoverVariants = {
     }
 };
 
-const overlayVariants = {
-    hidden: { 
-        opacity: 0, 
-        scale: 0.95,
-        transition: { duration: 0.2, ease: "easeOut" }
-    },
-    visible: { 
-        opacity: 1, 
-        scale: 1,
-        transition: { duration: 0.3, ease: "easeOut" }
-    }
-};
-
-const backdropVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-};
-
 const ProjectCard = ({ project, onReadMore }) => {
     const { currentTheme } = useTheme();
-    const [showTechStack, setShowTechStack] = useState(false);
 
-    const handleTechStackToggle = (e) => {
-        e.stopPropagation();
-        setShowTechStack(prev => !prev);
-    };
-
-    const closeTechStack = () => {
-        setShowTechStack(false);
-    };
+    const extraTechnologies =
+        project.technologies.others?.length > 0
+            ? project.technologies.others
+            : project.technologies.additional ?? [];
 
     // Get theme-specific colors and styles
     const getCardStyles = () => {
@@ -66,42 +42,46 @@ const ProjectCard = ({ project, onReadMore }) => {
             case 'minimal':
                 return {
                     card: 'bg-white border-gray-200 shadow-lg hover:shadow-xl hover:border-gray-300',
-                    title: 'text-gray-900',
+                    cardTitle:
+                        'text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-slate-800 via-blue-700 to-violet-600 bg-clip-text text-transparent',
                     description: 'text-gray-600',
-                    techBadge: 'bg-gray-100 text-gray-700 border-gray-200',
-                    button: 'text-blue-600 hover:text-blue-700 hover:bg-blue-50',
-                    techButton: 'bg-gray-100 hover:bg-gray-200 text-gray-700',
-                    overlay: 'bg-white border-gray-200 shadow-2xl'
+                    techBadge:
+                        'inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50/90 px-2.5 py-1 text-xs font-medium text-indigo-900/85 transition-colors duration-200 hover:border-violet-200 hover:bg-violet-50 hover:text-violet-900',
+                    liveSite:
+                        'rounded-xl border border-indigo-400/35 bg-indigo-600 py-2.5 text-sm font-medium text-white shadow-sm transition-colors duration-200 hover:bg-violet-600 hover:border-violet-400/40 active:scale-[0.99]',
                 };
             case 'neon':
                 return {
                     card: 'bg-black border-cyan-500/30 shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:border-cyan-400/50',
-                    title: 'text-white',
+                    cardTitle:
+                        'text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-200 via-teal-200 to-cyan-100 bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(45,212,191,0.14)]',
                     description: 'text-gray-300',
-                    techBadge: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
-                    button: 'text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/10',
-                    techButton: 'bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300',
-                    overlay: 'bg-black border-cyan-500/50 shadow-2xl shadow-cyan-500/20'
+                    techBadge:
+                        'inline-flex items-center rounded-full border border-teal-800/60 bg-teal-950/50 px-2.5 py-1 text-xs font-medium text-teal-200/95 transition-colors duration-200 hover:border-cyan-700/50 hover:bg-teal-900/60 hover:text-cyan-100',
+                    liveSite:
+                        'rounded-xl border border-teal-400/40 bg-teal-600 py-2.5 text-sm font-medium text-teal-50 shadow-sm transition-colors duration-200 hover:bg-cyan-600 hover:border-cyan-400/45 active:scale-[0.99]',
                 };
             case 'corporate':
                 return {
                     card: 'bg-slate-50 border-blue-200 shadow-lg hover:shadow-xl hover:border-blue-300',
-                    title: 'text-slate-900',
+                    cardTitle:
+                        'text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-slate-800 via-sky-700 to-blue-600 bg-clip-text text-transparent',
                     description: 'text-slate-600',
-                    techBadge: 'bg-blue-50 text-blue-700 border-blue-200',
-                    button: 'text-blue-600 hover:text-blue-700 hover:bg-blue-50',
-                    techButton: 'bg-blue-50 hover:bg-blue-100 text-blue-700',
-                    overlay: 'bg-slate-50 border-blue-200 shadow-2xl'
+                    techBadge:
+                        'inline-flex items-center rounded-md border border-sky-200/90 bg-sky-50 px-2.5 py-1 text-xs font-medium text-sky-900/90 shadow-sm transition-colors duration-200 hover:border-sky-300 hover:bg-sky-100',
+                    liveSite:
+                        'rounded-lg border border-sky-500/50 bg-sky-600 py-2.5 text-sm font-medium text-white shadow-sm transition-colors duration-200 hover:bg-sky-500 hover:border-sky-400 active:scale-[0.99]',
                 };
             default: // default theme
                 return {
                     card: 'bg-neutral-800 border-neutral-700 shadow-lg hover:shadow-2xl hover:border-neutral-600 shadow-black/20',
-                    title: 'text-white',
+                    cardTitle:
+                        'text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-violet-200 via-fuchsia-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_16px_rgba(167,139,250,0.14)]',
                     description: 'text-neutral-300',
-                    techBadge: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
-                    button: 'text-purple-400 hover:text-purple-300 hover:bg-purple-500/10',
-                    techButton: 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-300',
-                    overlay: 'bg-neutral-800 border-neutral-600 shadow-2xl shadow-black/50'
+                    techBadge:
+                        'inline-flex items-center rounded-full border border-violet-500/35 bg-violet-950/40 px-2.5 py-1 text-xs font-medium text-violet-200/95 transition-colors duration-200 hover:border-fuchsia-500/40 hover:bg-violet-900/50 hover:text-fuchsia-100',
+                    liveSite:
+                        'rounded-xl border border-violet-400/45 bg-violet-600 py-2.5 text-sm font-medium text-violet-50 shadow-sm transition-colors duration-200 hover:bg-fuchsia-600 hover:border-fuchsia-400/50 active:scale-[0.99]',
                 };
         }
     };
@@ -122,66 +102,72 @@ const ProjectCard = ({ project, onReadMore }) => {
                     whileHover="hover"
                     className="h-full"
                 >
-                    <div className={`rounded-xl p-6 border flex flex-col h-full transition-all duration-300 ${styles.card}`}
-                         style={{ minHeight: "420px" }}>
+                    <div
+                        role="group"
+                        tabIndex={0}
+                        onClick={onReadMore}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                onReadMore();
+                            }
+                        }}
+                        aria-label={`${project.title} — press Enter or Space to open details`}
+                        className={`rounded-xl py-6 px-3 border flex flex-col h-full transition-all duration-300 cursor-pointer ${styles.card}`}
+                        style={{ minHeight: "420px" }}
+                    >
                         
                         {/* Project Image */}
                         <OptimizedImage
                             src={project.image}
                             alt={project.title}
-                            className="rounded-lg mb-4"
+                            className="rounded-lg mb-5"
                             aspectRatio="aspect-video"
                         />
 
                         {/* Project Title */}
-                        <h3 className={`text-xl font-bold mb-2 ${styles.title}`}>
+                        <h3 className={`mb-5 w-full text-center ${styles.cardTitle}`}>
                             {project.title}
                         </h3>
 
-                        {/* Project Description */}
-                        <p className={`text-sm mb-4 flex-1 ${styles.description}`}>
-                            {project.description.summary}
-                        </p>
-
-                        {/* Key Technologies Preview */}
-                        <div className="mb-4">
-                            <div className="flex flex-wrap gap-1 mb-2">
-                                {project.technologies.main.slice(0, 3).map((tech) => (
+                        {/* Tech stack: main + extra in one flowing row */}
+                        <div className="mb-4 flex-1 flex flex-col">
+                            <div className="flex flex-wrap gap-2">
+                                {project.technologies.main.map((tech, i) => (
                                     <span
-                                        key={tech}
-                                        className={`px-2 py-1 rounded text-xs border ${styles.techBadge}`}
+                                        key={`main-${i}-${tech}`}
+                                        className={styles.techBadge}
                                     >
                                         {tech}
                                     </span>
                                 ))}
-                                {project.technologies.main.length > 3 && (
-                                    <button
-                                        onClick={handleTechStackToggle}
-                                        className={`px-2 py-1 rounded text-xs border transition-colors ${styles.techButton} ${getThemeFocusRing(currentTheme)}`}
-                                        aria-label="View all technologies"
+                                {extraTechnologies.map((tech, i) => (
+                                    <span
+                                        key={`extra-${i}-${tech}`}
+                                        className={styles.techBadge}
                                     >
-                                        more
-                                    </button>
-                                )}
+                                        {tech}
+                                    </span>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
-                        <div className="flex gap-2 mt-auto">
-                            <button
-                                onClick={onReadMore}
-                                className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${styles.button} ${getThemeFocusRing(currentTheme)}`}
-                                aria-label={`Read more about ${project.title}`}
-                            >
-                                View Details
-                            </button>
-                            
+                        <div className="mt-auto w-full">
                             <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border ${styles.techButton} ${getThemeFocusRing(currentTheme)}`}
-                                aria-label={`Visit ${project.title} live site`}
+                                href={project.url || "#"}
+                                {...(project.url
+                                    ? { target: "_blank", rel: "noopener noreferrer" }
+                                    : { "aria-disabled": true })}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (!project.url) e.preventDefault();
+                                }}
+                                className={`flex w-full justify-center px-4 py-2.5 text-sm transition-all duration-200 ${styles.liveSite} ${getThemeFocusRing(currentTheme)}`}
+                                aria-label={
+                                    project.url
+                                        ? `Visit ${project.title} live site`
+                                        : `${project.title} live site not linked`
+                                }
                             >
                                 Live Site
                             </a>
@@ -189,89 +175,6 @@ const ProjectCard = ({ project, onReadMore }) => {
                     </div>
                 </motion.div>
             </motion.div>
-
-            {/* Tech Stack Overlay Modal */}
-            <AnimatePresence>
-                {showTechStack && (
-                    <motion.div
-                        variants={backdropVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="hidden"
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-                        onClick={closeTechStack}
-                    >
-                        <motion.div
-                            variants={overlayVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="hidden"
-                            className={`rounded-xl p-6 border max-w-md w-full max-h-[80vh] overflow-y-auto ${styles.overlay}`}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className={`text-lg font-bold ${styles.title}`}>
-                                    {project.title} - Tech Stack
-                                </h3>
-                                <button
-                                    onClick={closeTechStack}
-                                    className={`p-2 rounded-lg transition-colors ${styles.techButton} ${getThemeFocusRing(currentTheme)}`}
-                                    aria-label="Close tech stack details"
-                                >
-                                    ✕
-                                </button>
-                            </div>
-
-                            <div className="space-y-4">
-                                <div>
-                                    <h4 className={`text-sm font-semibold mb-2 ${styles.description}`}>
-                                        Main Technologies:
-                                    </h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.technologies.main.map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className={`px-3 py-1 rounded-full text-sm border ${styles.techBadge}`}
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {project.technologies.additional && project.technologies.additional.length > 0 && (
-                                    <div>
-                                        <h4 className={`text-sm font-semibold mb-2 ${styles.description}`}>
-                                            Additional Tools:
-                                        </h4>
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.technologies.additional.map((tech) => (
-                                                <span
-                                                    key={tech}
-                                                    className={`px-3 py-1 rounded-full text-xs border ${styles.techBadge} opacity-80`}
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="mt-6 pt-4 border-t border-current opacity-20">
-                                <a
-                                    href={project.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`block w-full px-4 py-2 rounded-lg text-sm font-medium text-center transition-all duration-200 ${styles.button} ${getThemeFocusRing(currentTheme)}`}
-                                >
-                                    Visit Live Project
-                                </a>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </>
     );
 };
@@ -285,7 +188,8 @@ ProjectCard.propTypes = {
         }).isRequired,
         technologies: PropTypes.shape({
             main: PropTypes.arrayOf(PropTypes.string).isRequired,
-            additional: PropTypes.arrayOf(PropTypes.string)
+            others: PropTypes.arrayOf(PropTypes.string),
+            additional: PropTypes.arrayOf(PropTypes.string),
         }).isRequired,
         url: PropTypes.string.isRequired
     }).isRequired,

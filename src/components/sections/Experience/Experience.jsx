@@ -57,40 +57,16 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle, theme }) => {
       )}
 
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-[34px]">
         <div className="flex-1">
-          <h3 className={`text-xl md:text-2xl font-bold mb-2 ${
+          <h3 className={`text-xl md:text-2xl font-bold ${
             theme === 'minimal' ? 'text-gray-900' : 'text-white'
           }`}>
             {experience.role}
           </h3>
-          
-          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-            <a
-              href={experience.company.url}
-              onClick={(e) => e.stopPropagation()}
-              className={`text-lg font-semibold transition-colors ${
-                theme === 'minimal'
-                  ? 'text-blue-600 hover:text-blue-700'
-                  : 'text-blue-400 hover:text-blue-300'
-              }`}
-            >
-              @{experience.company.name}
-            </a>
-            
-            {experience.type && (
-              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
-                theme === 'minimal'
-                  ? 'bg-gray-100 text-gray-700'
-                  : 'bg-neutral-700 text-neutral-300'
-              }`}>
-                {experience.type}
-              </span>
-            )}
-          </div>
         </div>
-        
-        <div className="flex flex-col items-end gap-2">
+
+        <div className="flex flex-col items-end">
           <span className={`text-sm font-medium px-3 py-1 rounded-full ${
             theme === 'minimal'
               ? 'bg-gray-100 text-gray-700'
@@ -98,34 +74,37 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle, theme }) => {
           }`}>
             {experience.period}
           </span>
-          
-          <motion.div
-            animate={{ rotate: isExpanded ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-            className={`text-sm ${
-              theme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
-            }`}
-          >
-            ▼
-          </motion.div>
         </div>
       </div>
 
       {/* Key Highlights Preview */}
-      <div className="mb-6">
-        <p className={`text-sm md:text-base leading-relaxed ${
-          theme === 'minimal' ? 'text-gray-700' : 'text-neutral-300'
-        }`}>
-          {experience.highlights[0]}
-        </p>
-        
-        {experience.highlights.length > 1 && (
-          <p className={`text-sm mt-2 ${
-            theme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
+      <div className="mb-6 flex items-start gap-3">
+        <div className="flex-1 min-w-0">
+          <p className={`text-sm md:text-base leading-relaxed ${
+            theme === 'minimal' ? 'text-gray-700' : 'text-neutral-300'
           }`}>
-            +{experience.highlights.length - 1} more achievements
+            {experience.highlights[0]}
           </p>
-        )}
+
+          {experience.highlights.length > 1 && (
+            <p className={`text-sm mt-2 ${
+              theme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
+            }`}>
+              +{experience.highlights.length - 1} more achievements
+            </p>
+          )}
+        </div>
+
+        <motion.div
+          animate={{ rotate: isExpanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className={`flex-shrink-0 text-sm leading-none pt-0.5 ${
+            theme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
+          }`}
+          aria-hidden
+        >
+          ▼
+        </motion.div>
       </div>
 
       {/* Tech Stack Preview */}
