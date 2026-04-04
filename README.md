@@ -1,8 +1,7 @@
 # React Portfolio 🚀
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square&logo=vercel)](https://liuyuelin.dev)
-[![Stars](https://img.shields.io/github/stars/liuyuelintop/react-portfolio?style=social)](https://github.com/liuyuelintop/react-portfolio/stargazers)
-[![Portfolio Version](https://img.shields.io/badge/Version-Phase%207-success?style=flat-square)](https://github.com/liuyuelintop/react-portfolio)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square&logo=vercel)](https://portfoliodev-lovat.vercel.app/)
+[![Portfolio Version](https://img.shields.io/badge/Version-Phase%207-success?style=flat-square)](https://github.com/andysoft-source/Portfolio-Dev)
 
 ---
 
@@ -12,33 +11,7 @@ An innovative, interactive portfolio crafted with cutting-edge React 18 technolo
 
 ---
 
-## 🚦 Lighthouse Performance
-
-| Category       | Desktop | Mobile  |
-| -------------- | ------- | ------- |
-| Performance    | **100** | **89**  |
-| Accessibility  | **100** | **100** |
-| Best Practices | **96**  | **96**  |
-| SEO            | **100** | **100** |
-
-- **Core Web Vitals:** Excellent scores for CLS, LCP, and FCP
-- **Desktop:** Perfect 100 performance with ultra-fast loading
-- **Mobile:** Smooth experience with industry-leading optimization
-- **Accessibility:** Perfect 100 scores with WCAG AA compliance
-- **Modern Standards:** Exceeds accessibility and SEO requirements
-
-> [View Desktop Report](https://pagespeed.web.dev/analysis/https-www-liuyuelin-dev/df2ampev8u?form_factor=desktop) | [View Mobile Report](https://pagespeed.web.dev/analysis/https-www-liuyuelin-dev/df2ampev8u?form_factor=mobile)
-
----
-
 ## ✨ Key Features
-
-### 🎨 **Modern Design & Animations**
-- **Hero Section:** Grid layout with animated CTAs, floating geometric shapes, and skills showcase
-- **Interactive Navigation:** Active section indicators with smooth scroll animations
-- **4-Theme System:** Default, Neon, Minimal, and Corporate themes with system preference detection
-- **Advanced Micro-interactions:** Hover effects, loading states, keyboard shortcuts, and toast notifications
-- **Unified Typography:** Consistent heading styles across all themes with gradient effects
 
 ### 🏗️ **Professional Architecture**
 - **Component Organization:** Logical folder structure (`layout/`, `sections/`, `ui/`)
@@ -98,7 +71,7 @@ An innovative, interactive portfolio crafted with cutting-edge React 18 technolo
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/liuyuelintop/react-portfolio.git
+git clone https://github.com/darkbluesky/portfolio.git
 cd react-portfolio
 ```
 
@@ -340,11 +313,7 @@ Comprehensive development documentation is available in the `docs/claude-develop
 
 ## 👨‍💻 Author
 
-**Yuelin Liu** - Full Stack Developer & AI Engineer
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/liuyuelintop)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/liuyuelintop)
-[![Blog](https://img.shields.io/badge/Blog-Read-orange?style=flat-square&logo=hashnode)](https://blog.liuyuelin.dev/)
+**JinHo Yun** - Full Stack Developer & AI Engineer
 
 ---
 
