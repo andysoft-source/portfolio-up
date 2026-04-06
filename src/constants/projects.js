@@ -59,8 +59,8 @@ export const PROJECTS = [
     },
     url: "https://www.moon-oh.com/",
     technologies: {
-      main: ["Swift", "TypeScript", "Dart", "Kotlin"],
-      others: ["Java", "Objective-C", "JavaScript"],
+      main: ["Laravel", "Livewire", "Swift", "Kotlin"],
+      others: ["Filament", "PHP", "Dart", "Java", "Objective-C"],
     },
   },
   {

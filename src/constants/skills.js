@@ -27,6 +27,7 @@ export const SKILLS_DATA = {
     color: "from-green-500 to-emerald-500",
     skills: [
       { name: "Node.js", level: 88, years: 3, projects: 18 },
+      { name: "Laravel", level: 86, years: 2, projects: 8 },
       { name: "Express.js", level: 85, years: 3, projects: 15 },
       { name: "MongoDB", level: 82, years: 2, projects: 12 },
       { name: "PostgreSQL", level: 78, years: 2, projects: 10 },

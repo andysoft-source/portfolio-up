@@ -17,7 +17,7 @@ export const EXPERIENCES = [
     ],
     techStack: {
       frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
-      backend: ["Node.js", "Express", "MongoDB", "Firebase", "REST APIs"],
+      backend: ["Node.js", "Express", "Laravel", "MongoDB", "Firebase", "REST APIs"],
       architecture: ["Clean Architecture", "BFF Pattern", "Microservices"],
       devops: ["Docker", "Kubernetes", "GitLab CI/CD", "Blue-Green Deployments"],
       tools: ["Git", "Swagger", "Postman", "Jira", "Confluence", "Slack"],
@@ -40,7 +40,7 @@ export const EXPERIENCES = [
     ],
     techStack: {
       frontend: ["React", "JavaScript", "Redux Toolkit", "Tailwind CSS"],
-      backend: ["Node.js", "Express", "REST APIs"],
+      backend: ["Node.js", "Laravel", "Express", "REST APIs"],
       testing: ["Jest", "Postman"],
     },
   },
