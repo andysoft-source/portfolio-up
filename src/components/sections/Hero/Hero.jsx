@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { HERO_CONTENT } from "../../../constants/constants";
-import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { useTheme } from "../../../contexts/ThemeContext";
+import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import {
     containerVariants,
-    itemVariants,
-    titleVariants,
+    cursorGlowVariants,
     floatingShapeVariants,
     floatingShapeVariantsReduced,
-    cursorGlowVariants
+    itemVariants,
+    titleVariants
 } from "./animations";
 
 export default function Hero() {
@@ -76,10 +76,11 @@ export default function Hero() {
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
+                    style={{ marginTop: '50px' }}
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
-                    className="grid lg:grid-cols-3 gap-12 items-center"
+                    className="grid lg:grid-cols-3 gap-12 items-start"
                 >
                     {/* Main Content - Left Side */}
                     <div className="lg:col-span-2 space-y-8">
@@ -115,6 +116,7 @@ export default function Hero() {
                     {/* Skills & Info Card - Right Side */}
                     <motion.div
                         variants={itemVariants}
+                        style={{ marginTop: '50px' }}
                         className={`rounded-2xl p-8 border backdrop-blur-sm ${currentTheme === 'minimal'
                             ? 'bg-white/80 border-gray-200 shadow-xl shadow-gray-200/20'
                             : 'bg-neutral-800/80 border-neutral-700 shadow-xl shadow-black/20'

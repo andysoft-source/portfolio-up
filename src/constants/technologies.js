@@ -1,86 +1,112 @@
 // techStackData.js
-import { RiReactjsLine, RiBearSmileLine } from "react-icons/ri";
+import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiTypescript, SiZod, SiRedux, SiTailwindcss, SiShadcnui, SiVite, SiStorybook } from "react-icons/si";
-import { FaNodeJs, FaSlack } from "react-icons/fa";
-import { FaMasksTheater, FaAws } from "react-icons/fa6";
-import { SiExpress, SiPrisma, SiMongodb, SiSupabase, SiRedis, SiGraphql } from "react-icons/si";
-import { FaDocker } from "react-icons/fa";
-import { SiKubernetes, SiVercel, SiTurborepo, SiConfluence } from "react-icons/si";
-import { SiOpenai, SiLangchain, SiOllama } from "react-icons/si";
-import { SiJest, SiPostman, SiSwagger } from "react-icons/si";
-import { SiClerk } from "react-icons/si";
+import {
+  SiTypescript, SiPython, SiC, SiCplusplus,
+  SiVuedotjs, SiTailwindcss, SiFlutter,
+  SiDjango, SiExpress, SiMongodb, SiRedis, SiPostgresql, SiMysql,
+  SiFirebase, SiDocker, SiKubernetes, SiAmazonaws,
+  SiStripe, SiPaypal,
+  SiN8n, SiFigma, SiLinux, SiHtml5, SiCss3,
+  SiJenkins, SiGithubactions
+} from "react-icons/si";
+import { FaNodeJs, FaAws, FaDocker } from "react-icons/fa";
+import { SiJest, SiPostman } from "react-icons/si";
 
 export const TECH_STACK = [
   {
-    group: "Core Frontend",
+    group: "Languages",
     items: [
-      { name: "React", icon: RiReactjsLine, color: "text-cyan-400" },
-      { name: "Next.js", icon: TbBrandNextjs, color: "text-neutral-100" },
+      { name: "Python", icon: SiPython, color: "text-blue-500" },
+      { name: "JavaScript", icon: SiTypescript, color: "text-yellow-400" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
-      { name: "Zustand", icon: RiBearSmileLine, color: "text-gray-400" },
-      { name: "Zod", icon: SiZod, color: "text-purple-400" },
-      { name: "Redux Toolkit", icon: SiRedux, color: "text-purple-500" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
-      { name: "shadcn/ui", icon: SiShadcnui, color: "text-sky-400" },
-      { name: "Vite", icon: SiVite, color: "text-yellow-400" },
-      { name: "Storybook", icon: SiStorybook, color: "text-pink-300" }
+      { name: "C", icon: SiC, color: "text-blue-600" },
+      { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
     ]
   },
   {
-    group: "Core Backend",
+    group: "Frontend",
+    items: [
+      { name: "React", icon: RiReactjsLine, color: "text-cyan-400" },
+      { name: "Next.js", icon: TbBrandNextjs, color: "text-neutral-100" },
+      { name: "Vue.js", icon: SiVuedotjs, color: "text-green-500" },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+    ]
+  },
+  {
+    group: "Mobile",
+    items: [
+      { name: "Flutter", icon: SiFlutter, color: "text-blue-400" },
+    ]
+  },
+  {
+    group: "Backend",
     items: [
       { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
-      { name: "Express.js", icon: SiExpress, color: "text-blue-400" },
-      { name: "Prisma", icon: SiPrisma, color: "text-green-400" },
+      { name: "Express", icon: SiExpress, color: "text-gray-400" },
+      { name: "Django", icon: SiDjango, color: "text-green-700" },
+      { name: "REST APIs", icon: SiPostman, color: "text-orange-500" },
+    ]
+  },
+  {
+    group: "Database",
+    items: [
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
       { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
-      { name: "Supabase", icon: SiSupabase, color: "text-lime-400" },
       { name: "Redis", icon: SiRedis, color: "text-red-500" },
-      { name: "GraphQL", icon: SiGraphql, color: "text-pink-500" },
+    ]
+  },
+  {
+    group: "AI/ML",
+    items: [
+      { name: "NLP", icon: SiPython, color: "text-green-500" },
+      { name: "Collaborative Filtering", icon: SiPython, color: "text-purple-400" },
+      { name: "Content-Based Filtering", icon: SiPython, color: "text-indigo-400" },
     ]
   },
   {
     group: "Cloud & DevOps",
     items: [
+      { name: "AWS", icon: FaAws, color: "text-amber-600" },
       { name: "Docker", icon: FaDocker, color: "text-blue-500" },
       { name: "Kubernetes", icon: SiKubernetes, color: "text-blue-600" },
-      { name: "AWS", icon: FaAws, color: "text-amber-600" },
-      { name: "Vercel", icon: SiVercel, color: "text-black dark:text-white" },
-      { name: "Turborepo", icon: SiTurborepo, color: "text-neutral-400" },
-      { name: "CI/CD", icon: SiConfluence, color: "text-blue-400" },
+      { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
+      { name: "GitHub Actions", icon: SiGithubactions, color: "text-gray-300" },
+      { name: "Jenkins", icon: SiJenkins, color: "text-red-500" },
     ]
   },
   {
-    group: "AI, LLM & Data",
+    group: "Automation",
     items: [
-      { name: "OpenAI", icon: SiOpenai, color: "text-green-400/80" },
-      { name: "LangChain", icon: SiLangchain, color: "text-yellow-300" },
-      { name: "LlamaIndex", icon: SiOpenai, color: "text-green-500" },
-      { name: "Ollama", icon: SiOllama, color: "text-emerald-400" },
+      { name: "n8n", icon: SiN8n, color: "text-red-500" },
+      { name: "Webhooks", icon: SiN8n, color: "text-purple-400" },
+      { name: "API Integration", icon: SiPostman, color: "text-orange-400" },
     ]
   },
   {
-    group: "Testing & Automation",
+    group: "Payment",
     items: [
-      { name: "Jest", icon: SiJest, color: "text-red-500" },
-      { name: "Playwright", icon: FaMasksTheater, color: "text-pink-400" },
-      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-      { name: "Swagger", icon: SiSwagger, color: "text-yellow-400" },
+      { name: "Stripe", icon: SiStripe, color: "text-blue-400" },
+      { name: "PayPal", icon: SiPaypal, color: "text-blue-600" },
     ]
   },
   {
-    group: "Communication & Auth",
+    group: "Analytics",
     items: [
-      { name: "Clerk", icon: SiClerk, color: "text-purple-500/80" },
-      { name: "Slack", icon: FaSlack, color: "text-purple-400" },
+      { name: "Firebase Analytics", icon: SiFirebase, color: "text-yellow-500" },
+      { name: "UXCam", icon: SiFigma, color: "text-purple-400" },
     ]
   },
   {
-    group: "Learning & Next Focus",
+    group: "Tools",
     items: [
-      { name: "LangChain", icon: SiLangchain, color: "text-yellow-300" },
-      { name: "LlamaIndex", icon: SiOpenai, color: "text-green-500" },
-      { name: "Ollama", icon: SiOllama, color: "text-emerald-400" },
+      { name: "Git", icon: SiGithubactions, color: "text-orange-500" },
+      { name: "Figma", icon: SiFigma, color: "text-purple-400" },
+      { name: "VS Code", icon: SiLinux, color: "text-blue-500" },
+      { name: "Linux", icon: SiLinux, color: "text-yellow-400" },
     ]
   },
 ];
