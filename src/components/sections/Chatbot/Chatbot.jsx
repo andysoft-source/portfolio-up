@@ -111,7 +111,7 @@ export default function Chatbot() {
           >
             <span className="text-base">💡</span>
             <span className="text-left break-words">
-              Try asking: "What's your most successful achievements?"
+              Try asking: &quot;What&apos;s your most successful achievements?&quot;
             </span>
           </div>
         </motion.div>

@@ -88,19 +88,19 @@ export const PROJECTS = [
     image: projectImages.careerChatbot,
     description: {
       summary:
-        "Embedded AI concierge for your portfolio—answers career and project questions, captures leads, and routes unknown topics for follow-up.",
+        "In-browser AI career concierge—answers portfolio questions via GROQ's LLM API without external iframe dependencies.",
       features: [
-        "Digital representative tuned to JinHo Yun's experience and stack",
+        "Digital representative tuned to Hajun Kim's experience and stack",
         "Profile-grounded answers from structured context (no generic filler)",
-        "Visitor Q&A with logging for gaps you want to train later",
-        "Optional contact capture when visitors want a direct reply",
-        "Gemini-powered tool calls for structured note-taking",
+        "Real-time chat via GROQ Llama 3.3 70B API",
+        "Theme-aware UI with message history and typing indicators",
+        "Zero external embedding—runs entirely in the portfolio frontend",
       ],
     },
-    url: "https://huggingface.co/spaces/liuyuelintop/career_chatbots",
+    url: "",
     technologies: {
-      main: ["Python", "Gradio", "Gemini API", "Agents"],
-      others: ["Hugging Face Spaces", "Tool Use"],
+      main: ["React", "GROQ API", "Llama 3.3", "Tailwind CSS"],
+      others: ["Framer Motion", "Vite"],
     },
   },
   {

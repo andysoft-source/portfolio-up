@@ -5,3 +5,6 @@ export { useLighthouseScoreAnimation } from './useLighthouseScoreAnimation';
 
 // Data hooks
 export { useCV } from './useCV';
+
+// AI hooks
+export { useGroqChat } from './useGroqChat';

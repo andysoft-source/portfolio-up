@@ -67,64 +67,6 @@ An innovative, interactive portfolio crafted with cutting-edge React 18 technolo
 
 ---
 
-## 📦 Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/darkbluesky/portfolio.git
-cd react-portfolio
-```
-
-### 2. Install Dependencies
-
-You can use `npm` or `pnpm` to install dependencies.
-
-**Using npm:**
-```bash
-npm install
-```
-
-**Using pnpm (Recommended for faster installation):**
-```bash
-pnpm install
-```
-
-### 3. Environment Configuration
-Create a `.env` file in the root directory:
-```env
-VITE_GOOGLE_FOLDER_ID=your_google_drive_folder_id
-VITE_GOOGLE_API_KEY=your_google_api_key
-VITE_GITHUB_USERNAME=your_github_username
-```
-
-### 4. Development Server
-
-**Using npm:**
-```bash
-npm run dev
-```
-
-**Using pnpm:**
-```bash
-pnpm run dev
-```
-Visit [http://localhost:5173](http://localhost:5173) to see your portfolio.
-
-### 5. Production Build
-
-**Using npm:**
-```bash
-npm run build
-npm run preview  # Preview production build locally
-```
-
-**Using pnpm:**
-```bash
-pnpm run build
-pnpm run preview # Preview production build locally
-```
-
----
 
 ## 🏗️ Project Architecture
 
@@ -313,7 +255,7 @@ Comprehensive development documentation is available in the `docs/claude-develop
 
 ## 👨‍💻 Author
 
-**JinHo Yun** - Full Stack Developer & AI Engineer
+**Hajun Kim** - Full Stack Developer & AI Engineer
 
 ---
 

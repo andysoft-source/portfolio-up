@@ -21,6 +21,16 @@ export const PREVIEW_RESTRICTIONS = {
 export function detectProjectType(project) {
   const { url, title, technologies } = project;
   
+  // AI/Chatbot projects — check before URL fallback so local chatbots render properly
+  const isChatbotProject = title.toLowerCase().includes('chatbot') ||
+    title.toLowerCase().includes('nexus ai') ||
+    technologies?.main?.some(tech => tech.toLowerCase().includes('gradio')) ||
+    technologies?.main?.some(tech => tech.toLowerCase().includes('groq'));
+  
+  if (isChatbotProject) {
+    return PROJECT_TYPES.GRADIO_APP;
+  }
+  
   // No URL means GitHub-only or private project
   if (!url) {
     return PROJECT_TYPES.PRIVATE;
@@ -29,15 +39,6 @@ export function detectProjectType(project) {
   // GitHub repository URLs
   if (url.includes('github.com')) {
     return PROJECT_TYPES.GITHUB_ONLY;
-  }
-  
-  // Gradio/Hugging Face applications
-  const isGradioApp = url.includes('huggingface.co/spaces') || 
-    technologies?.main?.some(tech => tech.toLowerCase().includes('gradio')) ||
-    title.toLowerCase().includes('chatbot');
-  
-  if (isGradioApp) {
-    return PROJECT_TYPES.GRADIO_APP;
   }
   
   // Browser extensions and userscripts
