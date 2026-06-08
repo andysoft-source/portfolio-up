@@ -37,8 +37,8 @@ export const SKILLS_DATA = {
 };
 
 export const QUICK_STATS = [
-          { label: "Years Experience", value: "8+", icon: "📅" },
-          { label: "Projects Built", value: "50+", icon: "🚀" },
-          { label: "Technologies", value: "20+", icon: "⚡" },
-          { label: "Certifications", value: "5+", icon: "🏆" },
-        ];
+  { label: "Years Experience", value: "7+", icon: "📅" },
+  { label: "Projects Built", value: "50+", icon: "🚀" },
+  { label: "Technologies", value: "20+", icon: "⚡" },
+  { label: "Certifications", value: "5+", icon: "🏆" },
+];

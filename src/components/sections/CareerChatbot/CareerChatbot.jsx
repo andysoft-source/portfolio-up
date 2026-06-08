@@ -175,7 +175,9 @@ const CareerChatbot = () => {
   const { messages, sendMessage, isLoading, error, clearMessages } = useGroqChat(systemPrompt);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -185,10 +187,8 @@ const CareerChatbot = () => {
   }, [messages]);
 
   useEffect(() => {
-    if (shouldLoadChat) {
-      setTimeout(() => {
-        messagesEndRef.current?.scrollIntoView();
-      }, 100);
+    if (shouldLoadChat && chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = 0;
     }
   }, [shouldLoadChat]);
 
@@ -426,14 +426,14 @@ ChatMessage.propTypes = {
                 onClick={clearMessages}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`text-xs px-3 py-1.5 rounded-lg transition-colors ${
+                className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors ${
                   currentTheme === 'neon'
-                    ? 'bg-cyan-900/30 text-cyan-300 hover:bg-cyan-900/50'
+                    ? 'bg-cyan-600 text-white hover:bg-cyan-500'
                     : currentTheme === 'minimal'
-                      ? 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                      ? 'bg-gray-600 text-white hover:bg-gray-500'
                       : currentTheme === 'corporate'
-                        ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
-                        : 'bg-purple-900/30 text-purple-300 hover:bg-purple-900/50'
+                        ? 'bg-blue-600 text-white hover:bg-blue-500'
+                        : 'bg-purple-600 text-white hover:bg-purple-500'
                 }`}
               >
                 Clear
@@ -524,18 +524,26 @@ ChatMessage.propTypes = {
             <motion.button
               type="submit"
               disabled={isLoading || !inputValue.trim()}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className={`px-4 py-2.5 rounded-xl font-medium text-white transition-all duration-200 ${
                 isLoading || !inputValue.trim()
-                  ? 'opacity-50 cursor-not-allowed'
+                  ? 'cursor-not-allowed'
                   : currentTheme === 'neon'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400'
+                    ? 'hover:from-cyan-400 hover:to-blue-400'
                     : currentTheme === 'minimal'
-                      ? 'bg-gray-800 hover:bg-gray-700'
+                      ? 'hover:bg-gray-700'
                       : currentTheme === 'corporate'
-                        ? 'bg-blue-600 hover:bg-blue-500'
-                        : 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500'
+                        ? 'hover:bg-blue-500'
+                        : 'hover:from-purple-500 hover:to-blue-500'
+              } ${
+                isLoading || !inputValue.trim()
+                  ? 'bg-gray-400'
+                  : currentTheme === 'neon'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500'
+                    : currentTheme === 'minimal'
+                      ? 'bg-gray-800'
+                      : currentTheme === 'corporate'
+                        ? 'bg-blue-600'
+                        : 'bg-gradient-to-r from-purple-600 to-blue-600'
               }`}
             >
               Send
