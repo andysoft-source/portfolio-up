@@ -4,7 +4,10 @@
       "runtime": "@vercel/node@3"
     }
   },
-  "routes": [
-    { "src": "/api/groq", "dest": "/api/groq", "methods": ["POST"] }
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/"
+    }
   ]
 }

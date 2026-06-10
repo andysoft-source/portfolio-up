@@ -1,25 +1,39 @@
-// api/groq.js
+const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
+
 export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: 'GROQ_API_KEY is not configured' });
+  }
 
   try {
-    const { messages } = req.body;
+    const { model = DEFAULT_MODEL, messages } = req.body ?? {};
+
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ error: 'messages array is required' });
+    }
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        model: 'mixtral-8x7b-32768',
-        messages: messages
-      })
+      body: JSON.stringify({ model, messages }),
     });
 
     const data = await response.json();
-    res.status(200).json(data);
+
+    if (!response.ok) {
+      return res.status(response.status).json(data);
+    }
+
+    return res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 }
