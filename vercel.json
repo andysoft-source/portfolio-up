@@ -1,13 +1,21 @@
 {
-  "functions": {
-    "api/groq.js": {
-      "runtime": "@vercel/node@3"
-    }
-  },
-  "rewrites": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
     {
-      "source": "/((?!api/.*).*)",
-      "destination": "/"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "api/groq/index.cjs",
+      "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
