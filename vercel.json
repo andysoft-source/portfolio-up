@@ -3,5 +3,8 @@
     "api/groq.js": {
       "runtime": "@vercel/node@3"
     }
-  }
+  },
+  "routes": [
+    { "src": "/api/groq", "dest": "/api/groq", "methods": ["POST"] }
+  ]
 }
