@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const MODEL = 'llama-3.3-70b-versatile';
@@ -13,12 +13,6 @@ export function useGroqChat(systemPrompt) {
   const sendMessage = useCallback(async (content) => {
     if (isLoadingRef.current) return;
 
-    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
-    if (!apiKey) {
-      setError('GROQ API key is not configured. Add VITE_GROQ_API_KEY to your .env file.');
-      return;
-    }
-
     const userMessage = { role: 'user', content };
     conversationRef.current = [...conversationRef.current, userMessage];
     setMessages([...conversationRef.current]);
@@ -27,12 +21,9 @@ export function useGroqChat(systemPrompt) {
     setError(null);
 
     try {
-      const response = await fetch(GROQ_API_URL, {
+      const response = await fetch('/api/groq', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: MODEL,
           messages: [

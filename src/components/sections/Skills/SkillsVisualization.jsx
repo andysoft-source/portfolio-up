@@ -109,7 +109,7 @@ const CategoryCard = ({ category, data, index, activeCategory, setActiveCategory
 
   return (
     <motion.div
-      layout
+      layout={false}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -211,6 +211,11 @@ export default function SkillsVisualization() {
   const [activeCategory, setActiveCategory] = useState(null);
   const theme = useTheme();
 
+  const entries = Object.entries(SKILLS_DATA);
+  const midpoint = Math.ceil(entries.length / 2);
+  const leftColumn = entries.slice(0, midpoint);
+  const rightColumn = entries.slice(midpoint);
+
   return (
     <section className="max-w-6xl mx-auto py-16 px-4 lg:px-8">
       {/* Header */}
@@ -231,18 +236,33 @@ export default function SkillsVisualization() {
       </motion.div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Object.entries(SKILLS_DATA).map(([category, data], index) => (
-          <CategoryCard
-            key={category}
-            category={category}
-            data={data}
-            index={index}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-            theme={theme}
-          />
-        ))}
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex-1 space-y-6">
+          {leftColumn.map(([category, data], index) => (
+            <CategoryCard
+              key={category}
+              category={category}
+              data={data}
+              index={index}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+              theme={theme}
+            />
+          ))}
+        </div>
+        <div className="flex-1 space-y-6">
+          {rightColumn.map(([category, data], index) => (
+            <CategoryCard
+              key={category}
+              category={category}
+              data={data}
+              index={leftColumn.length + index}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+              theme={theme}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Quick Stats */}

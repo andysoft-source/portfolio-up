@@ -442,9 +442,23 @@ ChatMessage.propTypes = {
           </div>
         </div>
 
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className={`mx-4 mt-2 text-center p-3 rounded-lg text-sm ${
+              currentTheme === 'minimal'
+                ? 'bg-red-50 text-red-600 border border-red-200'
+                : 'bg-red-900/20 text-red-400 border border-red-800/30'
+            }`}
+          >
+            {error}
+          </motion.div>
+        )}
+
         <div
           ref={chatContainerRef}
-          className="flex-1 overflow-y-auto p-4 space-y-4"
+          className={`flex-1 overflow-y-auto p-4 space-y-4 ${error ? 'pt-2' : ''}`}
         >
           {messages.length === 0 && !isLoading && (
             <div className="flex flex-col items-center justify-center h-full text-center opacity-60">
@@ -471,20 +485,6 @@ ChatMessage.propTypes = {
 
           {isLoading && (
             <TypingIndicator currentTheme={currentTheme} />
-          )}
-
-          {error && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`text-center p-3 rounded-lg text-sm ${
-                currentTheme === 'minimal'
-                  ? 'bg-red-50 text-red-600 border border-red-200'
-                  : 'bg-red-900/20 text-red-400 border border-red-800/30'
-              }`}
-            >
-              {error}
-            </motion.div>
           )}
 
           <div ref={messagesEndRef} />
