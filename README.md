@@ -255,7 +255,7 @@ Comprehensive development documentation is available in the `docs/claude-develop
 
 ## 👨‍💻 Author
 
-**Hajun Kim** - Full Stack Developer & AI Engineer
+**Hajun Yun** - Full Stack Developer & AI Engineer
 
 ---
 

@@ -1,5 +1,5 @@
 export const HERO_CONTENT = {
-  name: "Hajun Kim",
+  name: "Hajun Yun",
   roles: [
     "AI-Driven Full-Stack Developer",
     "Backend & Microservices",
