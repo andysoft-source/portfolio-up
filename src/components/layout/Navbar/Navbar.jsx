@@ -60,8 +60,8 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`fixed top-0 w-full backdrop-blur-xl shadow-xl z-50 border-b transition-all duration-500 ${currentTheme === 'minimal'
-                    ? 'bg-white/95 border-gray-200/50 shadow-gray-200/20'
-                    : 'bg-neutral-900/90 border-neutral-800/50 shadow-black/20'
+                ? 'bg-white/95 border-gray-200/50 shadow-gray-200/20'
+                : 'bg-neutral-900/90 border-neutral-800/50 shadow-black/20'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,13 +70,13 @@ export default function Navbar() {
                     <div className="flex-shrink-0">
                         <motion.span
                             className={`text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent ${currentTheme === 'minimal'
-                                    ? 'from-gray-800 to-gray-600'
-                                    : 'from-purple-400 to-blue-400'
+                                ? 'from-gray-800 to-gray-600'
+                                : 'from-purple-400 to-blue-400'
                                 }`}
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            Hajun Kim&apos;s Portfolio
+                            Hajun Yun&apos;s Portfolio
                         </motion.span>
                     </div>
 
@@ -90,12 +90,12 @@ export default function Navbar() {
                                         key={item.label}
                                         href={item.href}
                                         className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${getThemeFocusRing(currentTheme)} ${isActive
-                                                ? currentTheme === 'minimal'
-                                                    ? 'text-white bg-gray-900 shadow-lg'
-                                                    : 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
-                                                : currentTheme === 'minimal'
-                                                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                                                    : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
+                                            ? currentTheme === 'minimal'
+                                                ? 'text-white bg-gray-900 shadow-lg'
+                                                : 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
+                                            : currentTheme === 'minimal'
+                                                ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                                : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
                                             }`}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -106,8 +106,8 @@ export default function Navbar() {
                                             <motion.div
                                                 layoutId="activeNavItem"
                                                 className={`absolute inset-0 rounded-xl ${currentTheme === 'minimal'
-                                                        ? 'bg-gray-900 shadow-lg'
-                                                        : 'bg-purple-600 shadow-lg shadow-purple-500/25'
+                                                    ? 'bg-gray-900 shadow-lg'
+                                                    : 'bg-purple-600 shadow-lg shadow-purple-500/25'
                                                     }`}
                                                 style={{ zIndex: -1 }}
                                                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
@@ -139,8 +139,8 @@ export default function Navbar() {
                             aria-label="Toggle navigation menu"
                             aria-expanded={isOpen}
                             className={`p-3 rounded-xl transition-all duration-300 ${currentTheme === 'minimal'
-                                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                                    : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
+                                ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
                                 }`}
                             onClick={toggleMenu}
                             whileHover={{ scale: 1.05 }}
@@ -197,8 +197,8 @@ export default function Navbar() {
                                 }
                             }}
                             className={`md:hidden py-4 space-y-2 border-t transition-colors ${currentTheme === 'minimal'
-                                    ? 'bg-white/95 border-gray-200'
-                                    : 'bg-neutral-900/95 border-neutral-800'
+                                ? 'bg-white/95 border-gray-200'
+                                : 'bg-neutral-900/95 border-neutral-800'
                                 }`}
                         >
                             {SECTION_LINKS.map((item, index) => {
@@ -211,12 +211,12 @@ export default function Navbar() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.05 }}
                                         className={`flex items-center px-4 py-3 rounded-xl transition-all duration-300 text-base font-medium ${isActive
-                                                ? currentTheme === 'minimal'
-                                                    ? 'text-white bg-gray-900 shadow-lg'
-                                                    : 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
-                                                : currentTheme === 'minimal'
-                                                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                                                    : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
+                                            ? currentTheme === 'minimal'
+                                                ? 'text-white bg-gray-900 shadow-lg'
+                                                : 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
+                                            : currentTheme === 'minimal'
+                                                ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                                : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
                                             }`}
                                         onClick={() => setIsOpen(false)}
                                         whileHover={{ x: 5 }}
